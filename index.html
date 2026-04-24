@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lobo Fleet Cost Dashboard</title>
+<style>
+  :root { --bg:#0b1020; --card:#141a33; --fg:#e5ecff; --dim:#8a97c7; --ok:#34d399; --warn:#fbbf24; --crit:#f87171; --accent:#60a5fa; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg)}
+  header{padding:24px 32px;border-bottom:1px solid #1e2746;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px}
+  h1{font-size:20px;font-weight:600;margin:0}
+  .tag{color:var(--dim);font-size:13px}
+  main{padding:24px 32px;max-width:1400px;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px}
+  .card{background:var(--card);border:1px solid #1e2746;border-radius:12px;padding:18px}
+  .card h3{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:0.05em;color:var(--dim);font-weight:500}
+  .card .big{font-size:28px;font-weight:600;margin:4px 0}
+  .card .sub{color:var(--dim);font-size:13px}
+  .bar{height:6px;background:#1e2746;border-radius:3px;overflow:hidden;margin-top:12px}
+  .bar>div{height:100%;background:var(--ok);transition:width .3s}
+  .bar.warn>div{background:var(--warn)}
+  .bar.crit>div{background:var(--crit)}
+  table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+  th,td{text-align:left;padding:8px 12px;border-bottom:1px solid #1e2746}
+  th{color:var(--dim);font-weight:500;font-size:12px;text-transform:uppercase}
+  td.num{font-variant-numeric:tabular-nums;text-align:right}
+  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:500}
+  .pill.ok{background:rgba(52,211,153,.15);color:var(--ok)}
+  .pill.warn{background:rgba(251,191,36,.15);color:var(--warn)}
+  .pill.crit{background:rgba(248,113,113,.15);color:var(--crit)}
+  .tabs{display:flex;gap:4px;margin:0 0 16px;border-bottom:1px solid #1e2746}
+  .tab{padding:10px 16px;cursor:pointer;border-bottom:2px solid transparent;color:var(--dim);font-size:14px}
+  .tab.active{color:var(--fg);border-bottom-color:var(--accent)}
+  .section{display:none}
+  .section.active{display:block}
+  #err{color:var(--crit);padding:12px;background:rgba(248,113,113,.1);border-radius:8px;margin-bottom:12px;display:none}
+  .footer{color:var(--dim);font-size:12px;padding:24px 32px;text-align:center}
+  canvas{max-height:300px}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>🐺 Lobo Fleet Cost Dashboard</h1><div class="tag" id="lastSweep">loading…</div></div>
+  <div class="tag">refresh every 15 min · <a style="color:var(--accent)" href="https://github.com/lobodotstreehouse/fleet-cost-dashboard">source</a></div>
+</header>
+<main>
+  <div id="err"></div>
+  <div class="tabs">
+    <div class="tab active" data-t="fleet">Lobo (Fleet)</div>
+    <div class="tab" data-t="cc">Claude Code</div>
+    <div class="tab" data-t="web">Claude.ai Web</div>
+  </div>
+
+  <section class="section active" id="fleet">
+    <div class="grid">
+      <div class="card"><h3>Billable this month</h3><div class="big" id="billable">—</div><div class="sub" id="billableSub">pay-per-use only</div><div class="bar"><div id="billableBar" style="width:0"></div></div></div>
+      <div class="card"><h3>Estimated total (all tokens)</h3><div class="big" id="estTotal">—</div><div class="sub">incl. subscription-covered</div></div>
+      <div class="card"><h3>Top agent today</h3><div class="big" id="topAgent">—</div><div class="sub" id="topAgentSub">—</div></div>
+      <div class="card"><h3>Budget gate level</h3><div class="big" id="gateLevel">—</div><div class="sub" id="gateMsg">—</div></div>
+    </div>
+    <div class="card">
+      <h3>Providers — billable vs cap</h3>
+      <table id="providerTable"><thead><tr><th>Provider</th><th>Plan</th><th class="num">Spend</th><th class="num">Cap</th><th class="num">%</th><th>Status</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Top agents (month, by billable)</h3>
+      <table id="agentTable"><thead><tr><th>Agent</th><th class="num">Tokens in</th><th class="num">Tokens out</th><th class="num">Billable</th><th class="num">Est. total</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <section class="section" id="cc">
+    <div class="grid">
+      <div class="card"><h3>Claude Code turns (MTD)</h3><div class="big" id="ccTurns">—</div><div class="sub">across projects</div></div>
+      <div class="card"><h3>Est. token cost (MTD)</h3><div class="big" id="ccEst">—</div><div class="sub">Max plan covers $0 actual</div></div>
+      <div class="card"><h3>Cache read tokens</h3><div class="big" id="ccCacheRead">—</div><div class="sub">big numbers are good — cache hits are 10× cheaper</div></div>
+    </div>
+    <div class="card"><h3>Top Claude Code projects (month)</h3><table id="ccTable"><thead><tr><th>Project</th><th class="num">Turns</th><th class="num">In</th><th class="num">Out</th><th class="num">Est.</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="section" id="web">
+    <div class="card">
+      <h3>Claude.ai Web (consumer)</h3>
+      <p>Consumer-tier Claude.ai usage is not exposed via any API. The local collector cannot see it.</p>
+      <p>Check quota at <a style="color:var(--accent)" href="https://console.anthropic.com">console.anthropic.com</a> or the Claude.ai app itself.</p>
+    </div>
+  </section>
+</main>
+<div class="footer">Generated by <code>fleet-spending-sweep.py</code> on the user's Mac · pushed every 15 min</div>
+
+<script>
+async function load(){
+  try{
+    const [sweep, agents, cc] = await Promise.all([
+      fetch('data/current.json').then(r=>r.json()),
+      fetch('data/agents.json').then(r=>r.json()).catch(()=>({agents:[]})),
+      fetch('data/claude-code.json').then(r=>r.json()).catch(()=>({projects:[], totals:{}}))
+    ]);
+    render(sweep, agents, cc);
+  }catch(e){
+    document.getElementById('err').style.display='block';
+    document.getElementById('err').textContent='Failed to load data: '+e.message;
+  }
+}
+
+function fmt$(n){ return '$'+(n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtN(n){ return (n||0).toLocaleString('en-US'); }
+function statusClass(s){return ({ok:'ok',warning:'warn',critical:'crit'})[s]||'ok';}
+
+function render(s, a, cc){
+  document.getElementById('lastSweep').textContent = 'last sweep: ' + new Date(s.lastSweepAt).toLocaleString();
+  document.getElementById('billable').textContent = fmt$(s.aggregateSpendUSD);
+  document.getElementById('billableSub').textContent = 'of ' + fmt$(s.aggregateCapUSD) + ' cap ('+s.aggregatePercent+'%)';
+  const bar = document.getElementById('billableBar');
+  bar.style.width = Math.min(100, s.aggregatePercent)+'%';
+  const barBox = bar.parentElement;
+  barBox.className = 'bar';
+  if(s.aggregatePercent>=95) barBox.classList.add('crit');
+  else if(s.aggregatePercent>=80) barBox.classList.add('warn');
+  document.getElementById('estTotal').textContent = fmt$(s.estimatedTotalUSD);
+
+  // Providers table
+  const ptb = document.querySelector('#providerTable tbody');
+  ptb.innerHTML = '';
+  for(const [id,p] of Object.entries(s.providers)){
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${p.name}</td><td class="tag">${planFor(id)}</td><td class="num">${fmt$(p.spendUSD)}</td><td class="num">${fmt$(p.capUSD)}</td><td class="num">${p.percentUsed}%</td><td><span class="pill ${statusClass(p.status)}">${p.status}</span></td>`;
+    ptb.appendChild(tr);
+  }
+
+  // Agents table
+  const atb = document.querySelector('#agentTable tbody');
+  atb.innerHTML = '';
+  (a.agents||[]).slice(0,20).forEach(x=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${x.agentId}</td><td class="num">${fmtN(x.input_tokens)}</td><td class="num">${fmtN(x.output_tokens)}</td><td class="num">${fmt$(x.billable)}</td><td class="num">${fmt$(x.estimated)}</td>`;
+    atb.appendChild(tr);
+  });
+
+  // Top agent today
+  if(a.topToday){
+    document.getElementById('topAgent').textContent = a.topToday.agentId;
+    document.getElementById('topAgentSub').textContent = fmt$(a.topToday.billable) + ' billable · ' + fmt$(a.topToday.estimated) + ' estimated today';
+  }
+
+  // Gate level
+  if(a.budgetGate){
+    const l = a.budgetGate.level, labels=['OK','WARN','CRITICAL','HALT'];
+    document.getElementById('gateLevel').textContent = labels[l]||'?';
+    document.getElementById('gateMsg').textContent = a.budgetGate.msg;
+  }
+
+  // Claude Code
+  const ct = cc.totals||{};
+  document.getElementById('ccTurns').textContent = fmtN(ct.turns);
+  document.getElementById('ccEst').textContent = fmt$(ct.estimated);
+  document.getElementById('ccCacheRead').textContent = fmtN(ct.cache_read);
+  const ctb = document.querySelector('#ccTable tbody');
+  ctb.innerHTML = '';
+  (cc.projects||[]).slice(0,20).forEach(x=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${x.project}</td><td class="num">${fmtN(x.turns)}</td><td class="num">${fmtN(x.input)}</td><td class="num">${fmtN(x.output)}</td><td class="num">${fmt$(x.estimated)}</td>`;
+    ctb.appendChild(tr);
+  });
+}
+
+function planFor(id){
+  return ({
+    anthropic:'Max (OAuth)',openai:'via OpenRouter',google:'AI Studio free',
+    'nvidia-nim':'Build credits',openrouter:'prepaid',elevenlabs:'paid tier'
+  })[id]||'';
+}
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.onclick = ()=>{
+    document.querySelectorAll('.tab,.section').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.t).classList.add('active');
+  };
+});
+
+load();
+setInterval(load, 60000); // soft refresh every minute
+</script>
+</body>
+</html>

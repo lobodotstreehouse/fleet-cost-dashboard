@@ -1,0 +1,35 @@
+{
+  "projects": [
+    {
+      "project": "-Users-openclaw-Downloads-Marketing-Textbooks",
+      "turns": 32278,
+      "input": 3198088351,
+      "output": 19465350,
+      "estimated": 2168.1454,
+      "cache_read": 0
+    },
+    {
+      "project": "-Users-openclaw",
+      "turns": 17328,
+      "input": 1755603819,
+      "output": 11653722,
+      "estimated": 1723.9928,
+      "cache_read": 0
+    },
+    {
+      "project": "-Users-openclaw-Desktop-background-files",
+      "turns": 6,
+      "input": 131359,
+      "output": 793,
+      "estimated": 0.11,
+      "cache_read": 0
+    }
+  ],
+  "totals": {
+    "turns": 49612,
+    "input": 4953823529,
+    "output": 31119865,
+    "cache_read": 0,
+    "estimated": 3892.2482
+  }
+}
