@@ -9,10 +9,10 @@
     },
     {
       "agentId": "claude-code:-Users-openclaw",
-      "input_tokens": 1892091342,
-      "output_tokens": 12447400,
+      "input_tokens": 1893514344,
+      "output_tokens": 12452310,
       "billable": 0.0,
-      "estimated": 1971.2823
+      "estimated": 1971.8122
     },
     {
       "agentId": "orchestrator",
@@ -81,11 +81,11 @@
   "topToday": {
     "agentId": "claude-code:-Users-openclaw",
     "billable": 0.0,
-    "estimated": 283.5119
+    "estimated": 284.0419
   },
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-24T21:03:55.113201Z"
+    "ts": "2026-04-24T21:18:56.041307Z"
   }
 }
