@@ -10,10 +10,10 @@
     },
     {
       "project": "-Users-openclaw",
-      "turns": 17773,
-      "input": 1809215658,
-      "output": 12008962,
-      "estimated": 1785.8486,
+      "turns": 17780,
+      "input": 1810817059,
+      "output": 12017725,
+      "estimated": 1789.2307,
       "cache_read": 0
     },
     {
@@ -26,10 +26,10 @@
     }
   ],
   "totals": {
-    "turns": 50209,
-    "input": 5020951503,
-    "output": 31584554,
+    "turns": 50216,
+    "input": 5022552904,
+    "output": 31593317,
     "cache_read": 0,
-    "estimated": 3972.8998
+    "estimated": 3976.2819
   }
 }
