@@ -2,17 +2,17 @@
   "agents": [
     {
       "agentId": "claude-code:-Users-openclaw-Downloads-Marketing-Textbooks",
-      "input_tokens": 3198088351,
-      "output_tokens": 19465350,
+      "input_tokens": 3200756230,
+      "output_tokens": 19480931,
       "billable": 0.0,
-      "estimated": 2168.1454
+      "estimated": 2173.6458
     },
     {
       "agentId": "claude-code:-Users-openclaw",
-      "input_tokens": 1755603819,
-      "output_tokens": 11653722,
+      "input_tokens": 1756633865,
+      "output_tokens": 11671437,
       "billable": 0.0,
-      "estimated": 1723.9928
+      "estimated": 1724.8135
     },
     {
       "agentId": "orchestrator",

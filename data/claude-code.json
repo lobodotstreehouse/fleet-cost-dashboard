@@ -2,18 +2,18 @@
   "projects": [
     {
       "project": "-Users-openclaw-Downloads-Marketing-Textbooks",
-      "turns": 32278,
-      "input": 3198088351,
-      "output": 19465350,
-      "estimated": 2168.1454,
+      "turns": 32294,
+      "input": 3200756230,
+      "output": 19480931,
+      "estimated": 2173.6458,
       "cache_read": 0
     },
     {
       "project": "-Users-openclaw",
-      "turns": 17328,
-      "input": 1755603819,
-      "output": 11653722,
-      "estimated": 1723.9928,
+      "turns": 17337,
+      "input": 1756633865,
+      "output": 11671437,
+      "estimated": 1724.8135,
       "cache_read": 0
     },
     {
@@ -26,10 +26,10 @@
     }
   ],
   "totals": {
-    "turns": 49612,
-    "input": 4953823529,
-    "output": 31119865,
+    "turns": 49637,
+    "input": 4957521454,
+    "output": 31153161,
     "cache_read": 0,
-    "estimated": 3892.2482
+    "estimated": 3898.5693
   }
 }
