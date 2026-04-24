@@ -2,17 +2,17 @@
   "agents": [
     {
       "agentId": "claude-code:-Users-openclaw-Downloads-Marketing-Textbooks",
-      "input_tokens": 3207056763,
-      "output_tokens": 19540994,
+      "input_tokens": 3209445116,
+      "output_tokens": 19556063,
       "billable": 0.0,
-      "estimated": 2183.469
+      "estimated": 2184.7321
     },
     {
       "agentId": "claude-code:-Users-openclaw",
-      "input_tokens": 1763347180,
-      "output_tokens": 11708956,
+      "input_tokens": 1766588712,
+      "output_tokens": 11721621,
       "billable": 0.0,
-      "estimated": 1732.0503
+      "estimated": 1734.2296
     },
     {
       "agentId": "orchestrator",
@@ -86,6 +86,6 @@
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-24T01:02:40.269869Z"
+    "ts": "2026-04-24T01:17:41.243559Z"
   }
 }

@@ -1,17 +1,17 @@
 {
   "version": 2,
   "month": "2026-04",
-  "lastSweepAt": "2026-04-24T01:02:40.268903Z",
+  "lastSweepAt": "2026-04-24T01:17:41.242945Z",
   "aggregateSpendUSD": 48.3443,
   "aggregateCapUSD": 50.0,
   "aggregatePercent": 96.69,
-  "estimatedTotalUSD": 3973.3698,
+  "estimatedTotalUSD": 3976.8121,
   "_note": "estimatedTotalUSD includes subscription-covered Anthropic usage at public rates (actual $ = 0 on Max plan). spendUSD excludes it.",
   "providers": {
     "anthropic": {
       "name": "Anthropic (Claude)",
       "spendUSD": 0.0,
-      "estimatedTotalUSD": 3925.0255,
+      "estimatedTotalUSD": 3928.4678,
       "capUSD": 15.0,
       "percentUsed": 0.0,
       "status": "ok"
@@ -44,8 +44,8 @@
       "name": "OpenRouter",
       "spendUSD": 48.3443,
       "estimatedTotalUSD": 48.3443,
-      "capUSD": 3.0,
-      "percentUsed": 1611.48,
+      "capUSD": 10.0,
+      "percentUsed": 483.44,
       "status": "critical"
     },
     "elevenlabs": {
@@ -62,9 +62,9 @@
       "level": "critical",
       "provider": "openrouter",
       "name": "OpenRouter",
-      "percent": 1611.48,
+      "percent": 483.44,
       "spend": 48.3443,
-      "cap": 3.0
+      "cap": 10.0
     }
   ]
 }
