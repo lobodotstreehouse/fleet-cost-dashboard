@@ -9,10 +9,10 @@
     },
     {
       "agentId": "claude-code:-Users-openclaw",
-      "input_tokens": 1836494681,
-      "output_tokens": 12162164,
+      "input_tokens": 1846373984,
+      "output_tokens": 12196296,
       "billable": 0.0,
-      "estimated": 1846.5207
+      "estimated": 1873.2301
     },
     {
       "agentId": "orchestrator",
@@ -30,10 +30,10 @@
     },
     {
       "agentId": "advisor-hub",
-      "input_tokens": 203,
-      "output_tokens": 18375,
+      "input_tokens": 207,
+      "output_tokens": 18499,
       "billable": 0.0,
-      "estimated": 2.0704
+      "estimated": 2.1002
     },
     {
       "agentId": "concierge-local",
@@ -81,11 +81,11 @@
   "topToday": {
     "agentId": "claude-code:-Users-openclaw",
     "billable": 0.0,
-    "estimated": 158.7504
+    "estimated": 185.4598
   },
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-24T12:33:23.158605Z"
+    "ts": "2026-04-24T12:48:24.122851Z"
   }
 }
