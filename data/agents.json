@@ -30,10 +30,10 @@
     },
     {
       "agentId": "advisor-hub",
-      "input_tokens": 287,
-      "output_tokens": 21033,
+      "input_tokens": 291,
+      "output_tokens": 21161,
       "billable": 0.0,
-      "estimated": 2.7029
+      "estimated": 2.7328
     },
     {
       "agentId": "concierge-local",
@@ -81,11 +81,11 @@
   "topToday": {
     "agentId": "advisor-hub",
     "billable": 0.0,
-    "estimated": 0.2708
+    "estimated": 0.3007
   },
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-25T09:34:43.194118Z"
+    "ts": "2026-04-25T09:49:44.195031Z"
   }
 }
