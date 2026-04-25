@@ -44,10 +44,10 @@
     },
     {
       "agentId": "monitor",
-      "input_tokens": 396,
-      "output_tokens": 8828,
+      "input_tokens": 418,
+      "output_tokens": 9032,
       "billable": 0.0,
-      "estimated": 0.3401
+      "estimated": 0.367
     },
     {
       "agentId": "builder",
@@ -86,6 +86,6 @@
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-25T02:49:16.781530Z"
+    "ts": "2026-04-25T03:04:17.732432Z"
   }
 }
