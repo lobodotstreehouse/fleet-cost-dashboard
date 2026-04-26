@@ -23,10 +23,10 @@
     },
     {
       "agentId": "advisor-hub",
-      "input_tokens": 359,
-      "output_tokens": 23317,
+      "input_tokens": 363,
+      "output_tokens": 23445,
       "billable": 0.0,
-      "estimated": 3.2904
+      "estimated": 3.322
     },
     {
       "agentId": "intake",
@@ -86,6 +86,6 @@
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-26T03:35:57.271947Z"
+    "ts": "2026-04-26T03:50:58.339783Z"
   }
 }
