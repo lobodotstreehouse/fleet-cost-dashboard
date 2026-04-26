@@ -37,10 +37,10 @@
     },
     {
       "agentId": "concierge-local",
-      "input_tokens": 55518,
-      "output_tokens": 48535,
+      "input_tokens": 55527,
+      "output_tokens": 49722,
       "billable": 0.3245,
-      "estimated": 1.8847
+      "estimated": 1.9365
     },
     {
       "agentId": "monitor",
@@ -86,6 +86,6 @@
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-26T06:51:11.090307Z"
+    "ts": "2026-04-26T07:06:12.156199Z"
   }
 }
