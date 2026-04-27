@@ -81,11 +81,11 @@
   "topToday": {
     "agentId": "advisor-hub",
     "billable": 0.0,
-    "estimated": 0.8232
+    "estimated": 0.1211
   },
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-27T03:52:39.486518Z"
+    "ts": "2026-04-27T04:07:40.523332Z"
   }
 }
