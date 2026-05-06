@@ -1,91 +1,9 @@
 {
-  "agents": [
-    {
-      "agentId": "claude-code:-Users-openclaw-Downloads-Marketing-Textbooks",
-      "input_tokens": 3211604486,
-      "output_tokens": 19574799,
-      "billable": 0.0,
-      "estimated": 2186.9412
-    },
-    {
-      "agentId": "claude-code:-Users-openclaw",
-      "input_tokens": 1927700434,
-      "output_tokens": 12631705,
-      "billable": 0.0,
-      "estimated": 1988.543
-    },
-    {
-      "agentId": "orchestrator",
-      "input_tokens": 1496625,
-      "output_tokens": 56807,
-      "billable": 47.8798,
-      "estimated": 50.3563
-    },
-    {
-      "agentId": "advisor-hub",
-      "input_tokens": 511,
-      "output_tokens": 28141,
-      "billable": 0.0,
-      "estimated": 4.5354
-    },
-    {
-      "agentId": "intake",
-      "input_tokens": 3630,
-      "output_tokens": 100330,
-      "billable": 0.0,
-      "estimated": 3.3604
-    },
-    {
-      "agentId": "concierge-local",
-      "input_tokens": 55634,
-      "output_tokens": 51352,
-      "billable": 0.3245,
-      "estimated": 1.9705
-    },
-    {
-      "agentId": "monitor",
-      "input_tokens": 3739,
-      "output_tokens": 51644,
-      "billable": 0.0,
-      "estimated": 1.3874
-    },
-    {
-      "agentId": "builder",
-      "input_tokens": 16275,
-      "output_tokens": 3746,
-      "billable": 0.14,
-      "estimated": 0.14
-    },
-    {
-      "agentId": "claude-code:-Users-openclaw-Desktop-background-files",
-      "input_tokens": 131359,
-      "output_tokens": 793,
-      "billable": 0.0,
-      "estimated": 0.11
-    },
-    {
-      "agentId": "dev",
-      "input_tokens": 10,
-      "output_tokens": 1266,
-      "billable": 0.0,
-      "estimated": 0.0822
-    },
-    {
-      "agentId": "bizops",
-      "input_tokens": 5,
-      "output_tokens": 400,
-      "billable": 0.0,
-      "estimated": 0.0487
-    }
-  ],
-  "topToday": {
-    "agentId": "claude-code:-Users-openclaw",
-    "billable": 0.0,
-    "estimated": 16.7307
-  },
+  "agents": [],
+  "topToday": null,
   "budgetGate": {
     "level": 2,
     "msg": "CRITICAL: $48.34/$50.00 (96.7%)",
-    "ts": "2026-04-27T17:38:53.644409Z"
+    "ts": "2026-04-27T17:43:54.064669Z"
   }
 }
