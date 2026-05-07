@@ -9,10 +9,10 @@
     },
     {
       "agentId": "monitor",
-      "input_tokens": 9660,
-      "output_tokens": 122854,
+      "input_tokens": 9775,
+      "output_tokens": 124347,
       "billable": 0.0,
-      "estimated": 2.8835
+      "estimated": 2.9152
     },
     {
       "agentId": "advisor-hub",
@@ -37,6 +37,6 @@
   "budgetGate": {
     "level": 0,
     "msg": "OK: $0.00/$50.00 (0.0%)",
-    "ts": "2026-05-07T18:58:57.704665Z"
+    "ts": "2026-05-07T19:13:58.770599Z"
   }
 }
