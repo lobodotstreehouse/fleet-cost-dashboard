@@ -9,17 +9,17 @@
     },
     {
       "agentId": "monitor",
-      "input_tokens": 10005,
-      "output_tokens": 127198,
+      "input_tokens": 10120,
+      "output_tokens": 128495,
       "billable": 0.0,
-      "estimated": 2.9775
+      "estimated": 3.0079
     },
     {
       "agentId": "advisor-hub",
-      "input_tokens": 88,
-      "output_tokens": 2792,
+      "input_tokens": 92,
+      "output_tokens": 2920,
       "billable": 0.0,
-      "estimated": 0.6575
+      "estimated": 0.6874
     },
     {
       "agentId": "concierge-local",
@@ -37,6 +37,6 @@
   "budgetGate": {
     "level": 0,
     "msg": "OK: $0.00/$50.00 (0.0%)",
-    "ts": "2026-05-07T19:44:01.064699Z"
+    "ts": "2026-05-07T19:59:02.143743Z"
   }
 }
