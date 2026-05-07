@@ -2,17 +2,17 @@
   "agents": [
     {
       "agentId": "claude-code:-Users-openclaw",
-      "input_tokens": 35342971,
-      "output_tokens": 340194,
+      "input_tokens": 38158842,
+      "output_tokens": 387792,
       "billable": 0.0,
-      "estimated": 107.4276
+      "estimated": 120.442
     },
     {
       "agentId": "monitor",
-      "input_tokens": 1255,
-      "output_tokens": 15020,
+      "input_tokens": 1347,
+      "output_tokens": 16177,
       "billable": 0.0,
-      "estimated": 0.5196
+      "estimated": 0.5446
     },
     {
       "agentId": "advisor-hub",
@@ -37,6 +37,6 @@
   "budgetGate": {
     "level": 0,
     "msg": "OK: $0.00/$50.00 (0.0%)",
-    "ts": "2026-05-07T00:27:32.690004Z"
+    "ts": "2026-05-07T00:42:33.820910Z"
   }
 }
