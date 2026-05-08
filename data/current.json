@@ -1,17 +1,17 @@
 {
   "version": 2,
   "month": "2026-05",
-  "lastSweepAt": "2026-05-07T23:59:17.549931Z",
+  "lastSweepAt": "2026-05-08T00:14:18.361412Z",
   "aggregateSpendUSD": 0.0,
   "aggregateCapUSD": 50.0,
   "aggregatePercent": 0.0,
-  "estimatedTotalUSD": 315.9082,
+  "estimatedTotalUSD": 315.939,
   "_note": "estimatedTotalUSD includes subscription-covered Anthropic usage at public rates (actual $ = 0 on Max plan). spendUSD excludes it.",
   "providers": {
     "anthropic": {
       "name": "Anthropic (Claude)",
       "spendUSD": 0.0,
-      "estimatedTotalUSD": 315.9082,
+      "estimatedTotalUSD": 315.939,
       "capUSD": 15.0,
       "percentUsed": 0.0,
       "status": "ok"
