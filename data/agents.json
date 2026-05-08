@@ -9,17 +9,17 @@
     },
     {
       "agentId": "monitor",
-      "input_tokens": 14497,
-      "output_tokens": 185354,
+      "input_tokens": 14612,
+      "output_tokens": 187231,
       "billable": 0.0,
-      "estimated": 4.3858
+      "estimated": 4.4198
     },
     {
       "agentId": "advisor-hub",
-      "input_tokens": 124,
-      "output_tokens": 3946,
+      "input_tokens": 128,
+      "output_tokens": 4070,
       "billable": 0.0,
-      "estimated": 0.9266
+      "estimated": 0.9564
     },
     {
       "agentId": "concierge-local",
@@ -32,11 +32,11 @@
   "topToday": {
     "agentId": "monitor",
     "billable": 0.0,
-    "estimated": 0.8569
+    "estimated": 0.8909
   },
   "budgetGate": {
     "level": 0,
     "msg": "OK: $0.00/$50.00 (0.0%)",
-    "ts": "2026-05-08T05:44:36.162476Z"
+    "ts": "2026-05-08T05:59:36.964264Z"
   }
 }
