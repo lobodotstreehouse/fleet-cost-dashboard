@@ -29,14 +29,10 @@
       "estimated": 0.0698
     }
   ],
-  "topToday": {
-    "agentId": "monitor",
-    "billable": 0.0,
-    "estimated": 2.8195
-  },
+  "topToday": null,
   "budgetGate": {
     "level": 0,
     "msg": "OK: $0.00/$50.00 (0.0%)",
-    "ts": "2026-05-10T03:47:07.147662Z"
+    "ts": "2026-05-10T04:02:07.954331Z"
   }
 }
