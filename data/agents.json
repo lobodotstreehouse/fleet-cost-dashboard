@@ -29,14 +29,10 @@
       "estimated": 0.0698
     }
   ],
-  "topToday": {
-    "agentId": "claude-code:-Users-openclaw",
-    "billable": 0.0,
-    "estimated": 117.7769
-  },
+  "topToday": null,
   "budgetGate": {
     "level": 0,
     "msg": "OK: $0.00/$50.00 (0.0%)",
-    "ts": "2026-05-12T03:49:43.272620Z"
+    "ts": "2026-05-12T04:04:44.091296Z"
   }
 }
